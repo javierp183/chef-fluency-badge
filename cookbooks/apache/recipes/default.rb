@@ -6,14 +6,14 @@
 # Install apache package for centos server
 # Added dependency
 
-if node['platfom_family'] == "rhel" 
-	package = "httpd"
+if    node['platfom_family'] == "rhel" 
+	package = 'httpd'
 elsif node['platform_family'] == "debian"
-	package = "apache2"
+	package = 'apache2'
 end
 
 package 'apache2' do
-	package_name package
+	package_name httpd
 	action :install
 end
 
